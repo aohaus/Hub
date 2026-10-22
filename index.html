@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Badminton Apps has moved / 移転しました</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://dechatgpt.com/Badminton/">
+<noscript><meta http-equiv="refresh" content="5; url=https://dechatgpt.com/Badminton/"></noscript>
+<style>
+  :root { --ink:#1d1d1f; --muted:#6e6e73; --accent:#2f8f5b; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px 16px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;
+    color:var(--ink); background:linear-gradient(180deg,#d6ecdd 0%,#f4f7f5 70%); }
+  .card { width:min(460px,100%); background:#fff; border-radius:24px; padding:26px 22px;
+    box-shadow:0 12px 32px rgba(16,48,32,.1); text-align:center; }
+  h1 { margin:0 0 6px; font-size:24px; letter-spacing:-.02em; }
+  p { margin:6px 0; color:var(--muted); line-height:1.6; font-size:14px; }
+  .url { display:block; margin:14px 0 4px; font-weight:700; color:var(--ink); word-break:break-all; font-size:14px; }
+  .btn { display:inline-block; margin-top:14px; padding:13px 22px; border-radius:999px; background:var(--accent);
+    color:#fff; font-weight:700; text-decoration:none; }
+  .count { font-size:12px; margin-top:12px; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <h1>Badminton Apps has moved</h1>
+    <p>このアプリは新しいアドレスに移転しました。<br>ブックマークの更新をお願いします。</p>
+    <a class="url" href="https://dechatgpt.com/Badminton/" id="newUrl">https://dechatgpt.com/Badminton/</a>
+    <a class="btn" href="https://dechatgpt.com/Badminton/" id="go">Open / 新しいページを開く</a>
+    <p class="count" id="count">5秒後に自動で移動します / Redirecting in 5 seconds</p>
+  </main>
+  <script>
+    (function () {
+      var target = 'https://dechatgpt.com/Badminton/' + location.search + location.hash;
+      document.getElementById('go').href = target;
+      // Links that carry data (e.g. PairPlay -> RallyScore ?teamA=...) go straight through.
+      if (location.search || location.hash) { location.replace(target); return; }
+      var n = 5, el = document.getElementById('count');
+      var timer = setInterval(function () {
+        n -= 1;
+        if (n <= 0) { clearInterval(timer); location.replace(target); return; }
+        el.textContent = n + '秒後に自動で移動します / Redirecting in ' + n + ' seconds';
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>
